@@ -1,14 +1,19 @@
 {
-  "name": "ts-express",
+  "name": "ts-mongoose-express-api",
   "version": "1.0.0",
   "author": "kenliten",
   "license": "GPL-3-or-later",
   "scripts": {
-    "build": "tsc",
-    "start": "nodemon src/app.ts"
+    "build": "tsc --build tsconfig.json",
+    "start": "node ./build/app.js",
+    "prestart": "npm install && npm run build",
+    "start:ts": "nodemon src/app.ts"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.13"
   },
   "devDependencies": {
     "@types/cors": "^2.8.9",
